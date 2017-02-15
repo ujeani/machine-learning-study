@@ -37,7 +37,7 @@ plt.xlabel('Population of City in 10,000s')
 plt.show()
 
 ## =================== Part 3: Gradient descent ===================
-print('Running Gradient Descent ...\n')
+print('Running Gradient Descent ...')
 X = np.c_[np.ones(m), X] # Add a column of ones to x
 theta = np.zeros((2, 1)) # initialize fitting parameters
 
@@ -52,7 +52,7 @@ print(computeCost(X, y, theta))
 theta, J_history = gradientDescent(X, y, theta, alpha, iterations)
 
 # print theta to screen
-print('Theta found by gradient descent: {}, {}'.format(theta[0], theta[1]))
+print('Theta found by gradient descent: ',theta[0], theta[1])
 
 # plot the histrory of J value
 plt.plot(J_history)
@@ -69,12 +69,12 @@ plt.show()
 # Predict values for population sizes of 35,000 and 70,000
 # predict1 = np.array([1,3.5]).dot(theta)
 predict1 = theta.T.dot([1,3.5])
-print('For population = 35,000, we predict a profit of {}'.format(predict1*10000))
+print('For population = 35,000, we predict a profit of', predict1*10000)
 
 # predict2 = np.array([1, 7]).dot(theta)
 predict2 = theta.T.dot([1,7])
-print('For population = 70,000, we predict a profit of {}'.format(predict2*10000))
+print('For population = 70,000, we predict a profit of ', predict2*10000)
 
 
 ## ============= Part 4: Visualizing J(theta_0, theta_1) =============
-print('Visualizing J(theta_0, theta_1) ...\n')
+print('Visualizing J(theta_0, theta_1) ...')

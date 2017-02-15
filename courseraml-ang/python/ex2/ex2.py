@@ -136,10 +136,10 @@ plotDecisionBoundary(theta, data[:, [0,1]], data[:, [2]])
 
 v = np.array([1, 45, 85])
 prob = sigmoid(v.dot(theta))
-print('For a student with scores 45 and 85, we predict an admission probability of {}'.format(prob))
+print('For a student with scores 45 and 85, we predict an admission probability of ',prob)
 
 # Compute accuracy on our training set
 p = predict(theta, X)
 
-print('Train Accuracy: {}'.format(np.mean(np.double(p == y)) * 100))
+print('Train Accuracy: ', np.mean(np.double(p == y)) * 100)
 
