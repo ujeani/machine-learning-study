@@ -61,10 +61,8 @@ def plotData(X, y):
 def plotDecisionBoundary(theta, X, y):
     plotTrainingData(X, y)
 
-    plot_x = np.array([np.min(X[:, 0]) - 2, np.max(X[:, 1] + 2)])
-    plot_y = -1. / theta[2, 0]
-    plot_y = plot_y * theta[1, 0] * plot_x
-    plot_y = plot_y + theta[0, 0]
+    plot_x = np.array([np.min(X[:, 1]), np.max(X[:, 1])])
+    plot_y = (-1. / theta[2]) * (theta[0] + (theta[1] * plot_x))
     print(plot_x)
     print(plot_y)
     plt.plot(plot_x, plot_y)
@@ -113,7 +111,7 @@ print('Gradient at initial theta (zeros): ', grad)
 
 ## ============= Part 3: Optimizing  =============
 alpha = 0.002
-num_iters = 10000000
+num_iters = 1000000
 theta, J_history = gradientDescent(X, y, initial_theta, alpha, num_iters)
 # Print theta to screen
 print('theta: ', theta)
