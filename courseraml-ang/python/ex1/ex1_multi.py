@@ -54,7 +54,7 @@ m = y.size
 # Print out some data points
 print('First 10 examples from the dataset:')
 for i in range(10):
-    print(' X = [{}, {}], y = {}'.format(X[i, 0], X[i, 1], y[i]))
+    print(' X = [', X[i, 0], X[i, 1],'], y =', y[i])
 
 
 # Scale features and set them to zero mean
@@ -64,7 +64,7 @@ X, mu, sigma = featureNormalize(X)
 
 print('First 10 examples from the dataset (normalized) :')
 for i in range(10):
-    print(' X = [{}, {}], y = {}'.format(X[i, 0], X[i, 1], y[i]))
+    print(' X = [', X[i, 0], X[i, 1],'], y =', y[i])
 
 # Add intercept term to X
 X = np.c_[np.ones(m), X] # Add a column of ones to x
@@ -100,7 +100,7 @@ print(theta)
 # Estimate the price of a 1650 sq-ft, 3 br house
 
 price = theta.T.dot([1, (1650-mu[0,0])/sigma[0,0], (3-mu[0,1])/sigma[0,1]])
-print('Predicted price of a 1650 sq-ft, 3 br house (using gradient descent):{}'.format(price))
+print('Predicted price of a 1650 sq-ft, 3 br house (using gradient descent): ',price)
 
 ## ================ Part 3: Normal Equations ================
 
@@ -120,12 +120,11 @@ X = np.c_[np.ones(m), X] # Add a column of ones to x
 theta = normalEqn(X, y)
 
 # Display normal equation's result
-print('Theta computed from the normal equations: ')
-print(theta)
+print('Theta computed from the normal equations: ', theta)
 
 
 # Estimate the price of a 1650 sq-ft, 3 br house
 price = theta.T.dot([1, 1650, 3])
 
-print('Predicted price of a 1650 sq-ft, 3 br house (using normal equations): {}'.format(price))
+print('Predicted price of a 1650 sq-ft, 3 br house (using normal equations): ',price)
 
