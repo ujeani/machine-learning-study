@@ -18,6 +18,9 @@ def plotTrainingData(X, y, xlabel="", ylabel=""):
     pos = np.where(y == 1)
     neg = np.where(y == 0)
 
+    axes = plt.gca()
+    axes.set_xlim([-1, 1.5])
+    axes.set_ylim([-1, 1.5])
     plt.plot(X[pos, 0], X[pos, 1], 'k+')
     plt.plot(X[neg, 0], X[neg, 1], 'yo')
     plt.xlabel(xlabel)
